@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Enterprises | Best Appliance Repair & Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Top Bar / Header */
+        header {
+            background-color: #0b3c5d;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-badge {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .company-name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header-btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .header-btn:hover {
+            background-color: #219150;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(11, 60, 93, 0.9), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #f39c12;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-call {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        /* Container Section */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #0b3c5d;
+            text-transform: uppercase;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 5px solid #0b3c5d;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: #0b3c5d;
+            margin-bottom: 12px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 18px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .service-card ul li::before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .card-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #0b3c5d;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Highlights / Features */
+        .features-section {
+            background-color: #eef2f5;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 200px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .feature-box h4 {
+            color: #f39c12;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* Sticky Bottom Bar for Mobile (Google Ads Call Generator) */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        .sticky-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            width: 48%;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .sticky-call {
+            background-color: #e74c3c;
+        }
+
+        .sticky-wa {
+            background-color: #25d366;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #0b3c5d;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .sticky-bar {
+                display: none;
+            }
+            footer {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo-box">
+            <span class="logo-badge">GHM</span>
+            <div class="company-name">GENIUS ENTERPRISES</div>
+        </div>
+        <a href="tel:+919565132445" class="header-btn">📞 Book Technician</a>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Genius Enterprises</h1>
+        <p>Complete Doorstep Repair, Service & Installation Solutions</p>
+        <div class="cta-buttons">
+            <a href="tel:+919565132445" class="btn-call">📞 Call: 8796521531</a>
+            <a href="https://wa.me/919565132445?text=Hello%20Genius%20Enterprises,%20mujhe%20repair%20service%20chahiye" class="btn-whatsapp">💬 WhatsApp Booking</a>
+        </div>
+    </section>
+
+    <!-- Our Repair Services Section -->
+    <section class="container">
+        <h2 class="section-title">Hamari Repair & Installation Services</h2>
+
+        <div class="services-grid">
+
+            <!-- Washing Machine -->
+            <div class="service-card">
+                <h3>Washing Machine Repair</h3>
+                <ul>
+                    <li>Front Load Washing Machine</li>
+                    <li>Top Load Fully Automatic</li>
+                    <li>Semi-Automatic Washing Machine</li>
+                    <li>Drum, Motor & PCB Repair</li>
+                </ul>
+                <a href="tel:+919565132445" class="card-btn">Call For Repair</a>
+            </div>
+
+            <!-- Refrigerator / Fridge -->
+            <div class="service-card">
+                <h3>Refrigerator (Fridge) Service</h3>
+                <ul>
+                    <li>Single Door Refrigerator</li>
+                    <li>Double Door Refrigerator</li>
+                    <li>Side-by-Side & Inverter Fridge</li>
+                    <li>Gas Refilling & Cooling Issue Repair</li>
+                </ul>
+                <a href="tel:+919565132445" class="card-btn">Call For Repair</a>
+            </div>
+
+            <!-- Air Conditioner (AC) -->
+            <div class="service-card">
+                <h3>AC Installation & Service</h3>
+                <ul>
+                    <li>Split AC & Window AC Fitting</li>
+                    <li>Deep Jet Cleaning & Servicing</li>
+                    <li>Gas Leakage Fix & Refilling</li>
+                    <li>Uninstallation & PCB Repair</li>
+                </ul>
+                <a href="tel:+918796521531" class="card-btn">Call For Service</a>
+            </div>
+
+            <!-- Dishwasher -->
+            <div class="service-card">
+                <h3>Dishwasher Repair</h3>
+                <ul>
+                    <li>Water Discharge & Pump Issue</li>
+                    <li>Door Lock & Heating Repair</li>
+                    <li>Error Code & Electrical Faults</li>
+                    <li>All Brand Dishwasher Service</li>
+                </ul>
+                <a href="tel:+918796521531" class="card-btn">Call For Repair</a>
+            </div>
+
+            <!-- Microwave Oven -->
+            <div class="service-card">
+                <h3>Microwave Oven Repair</h3>
+                <ul>
+                    <li>Solo, Grill & Convection Microwave</li>
+                    <li>Magnetron & Touchpad Change</li>
+                    <li>Heating Problem Resolution</li>
+                    <li>Sparking & Power Issue Repair</li>
+                </ul>
+                <a href="tel:+919565132445" class="card-btn">Call For Repair</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>⚡ Doorstep Service</h4>
+                <p>30 Min me Technician aapke ghar par.</p>
+            </div>
+            <div class="feature-box">
+                <h4>👨‍🔧 Expert Technicians</h4>
+                <p>Experienced & Trained Mechanics.</p>
+            </div>
+            <div class="feature-box">
+                <h4>💯 Original Parts</h4>
+                <p>Authentic Spare Parts With Warranty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Genius Enterprises (GHM). All Rights Reserved.</p>
+    </footer>
+
+    <!-- Mobile Sticky Call Bar -->
+    <div class="sticky-bar">
+        <a href="tel:+919565132445" class="sticky-call">📞 Call Now</a>
+        <a href="https://wa.me/919565132445?text=Hello%20Genius%20Enterprises,%20mujhe%20service%20book%20karni%20hai" class="sticky-wa">💬 WhatsApp</a>
+    </div>
+
+</body>
+</html>
